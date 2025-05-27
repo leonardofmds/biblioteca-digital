@@ -14,7 +14,11 @@ import { FormsModule } from '@angular/forms';
 export class ListaLivrosComponent implements OnInit {
   livros: Livro[] = [];
   livrosFiltrados: Livro[] = [];
+  livrosPaginados: Livro[] = [];
+
   termoBusca: string = '';
+  paginaAtual: number = 1;
+  itensPorPagina: number = 5;
 
   constructor(
     private livrosService: LivrosService,
@@ -28,7 +32,7 @@ export class ListaLivrosComponent implements OnInit {
   carregarLivros(): void {
     this.livrosService.listar().subscribe((dados) => {
       this.livros = dados;
-      this.livrosFiltrados = dados;
+      this.filtrarLivros();
     });
   }
 
@@ -37,6 +41,25 @@ export class ListaLivrosComponent implements OnInit {
     this.livrosFiltrados = this.livros.filter(livro =>
       livro.titulo.toLowerCase().includes(termo)
     );
+    this.paginaAtual = 1;
+    this.atualizarPaginacao();
+  }
+
+  atualizarPaginacao(): void {
+    const inicio = (this.paginaAtual - 1) * this.itensPorPagina;
+    const fim = inicio + this.itensPorPagina;
+    this.livrosPaginados = this.livrosFiltrados.slice(inicio, fim);
+  }
+
+  mudarPagina(pagina: number): void {
+    this.paginaAtual = pagina;
+    this.atualizarPaginacao();
+  }
+
+  totalPaginas(): number[] {
+    return Array(Math.ceil(this.livrosFiltrados.length / this.itensPorPagina))
+      .fill(0)
+      .map((_, i) => i + 1);
   }
 
   editarLivro(id: string | number): void {
@@ -52,7 +75,6 @@ export class ListaLivrosComponent implements OnInit {
   }
 
   verDetalhes(id: string | number): void {
-  this.router.navigate(['/livros/detalhes', id]);
-}
-
+    this.router.navigate(['/livros/detalhes', id]);
+  }
 }

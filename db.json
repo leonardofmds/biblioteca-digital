@@ -1,25 +1,144 @@
 {
   "livros": [
     {
-      "id": "1",
+      "id": 1,
       "titulo": "O Senhor dos Anéis",
       "autor": "J.R.R. Tolkien",
       "ano": 1954,
       "genero": "Fantasia"
     },
     {
-      "id": "2",
+      "id": 2,
       "titulo": "1984",
       "autor": "George Orwell",
       "ano": 1949,
       "genero": "Distopia"
     },
     {
-      "id": "5e6e",
-      "titulo": "O Senhor dos Anéis 3",
+      "id": 3,
+      "titulo": "Dom Casmurro",
+      "autor": "Machado de Assis",
+      "ano": 1899,
+      "genero": "Romance"
+    },
+    {
+      "id": 4,
+      "titulo": "A Revolução dos Bichos",
+      "autor": "George Orwell",
+      "ano": 1945,
+      "genero": "Sátira"
+    },
+    {
+      "id": 5,
+      "titulo": "O Pequeno Príncipe",
+      "autor": "Antoine de Saint-Exupéry",
+      "ano": 1943,
+      "genero": "Fábula"
+    },
+    {
+      "id": 6,
+      "titulo": "Harry Potter e a Pedra Filosofal",
+      "autor": "J.K. Rowling",
+      "ano": 1997,
+      "genero": "Fantasia"
+    },
+    {
+      "id": 7,
+      "titulo": "O Hobbit",
       "autor": "J.R.R. Tolkien",
+      "ano": 1937,
+      "genero": "Fantasia"
+    },
+    {
+      "id": 8,
+      "titulo": "Capitães da Areia",
+      "autor": "Jorge Amado",
+      "ano": 1937,
+      "genero": "Drama"
+    },
+    {
+      "id": 9,
+      "titulo": "A Menina que Roubava Livros",
+      "autor": "Markus Zusak",
       "ano": 2005,
-      "genero": "Aventura"
+      "genero": "Ficção histórica"
+    },
+    {
+      "id": 10,
+      "titulo": "O Código Da Vinci",
+      "autor": "Dan Brown",
+      "ano": 2003,
+      "genero": "Suspense"
+    },
+    {
+      "id": 11,
+      "titulo": "Cem Anos de Solidão",
+      "autor": "Gabriel García Márquez",
+      "ano": 1967,
+      "genero": "Realismo mágico"
+    },
+    {
+      "id": 12,
+      "titulo": "O Nome do Vento",
+      "autor": "Patrick Rothfuss",
+      "ano": 2007,
+      "genero": "Fantasia"
+    },
+    {
+      "id": 13,
+      "titulo": "O Alquimista",
+      "autor": "Paulo Coelho",
+      "ano": 1988,
+      "genero": "Ficção"
+    },
+    {
+      "id": 14,
+      "titulo": "O Morro dos Ventos Uivantes",
+      "autor": "Emily Brontë",
+      "ano": 1847,
+      "genero": "Romance"
+    },
+    {
+      "id": 15,
+      "titulo": "Frankenstein",
+      "autor": "Mary Shelley",
+      "ano": 1818,
+      "genero": "Terror"
+    },
+    {
+      "id": 16,
+      "titulo": "Drácula",
+      "autor": "Bram Stoker",
+      "ano": 1897,
+      "genero": "Terror"
+    },
+    {
+      "id": 17,
+      "titulo": "A Metamorfose",
+      "autor": "Franz Kafka",
+      "ano": 1915,
+      "genero": "Existencialismo"
+    },
+    {
+      "id": 18,
+      "titulo": "As Crônicas de Nárnia",
+      "autor": "C.S. Lewis",
+      "ano": 1950,
+      "genero": "Fantasia"
+    },
+    {
+      "id": 19,
+      "titulo": "Jogos Vorazes",
+      "autor": "Suzanne Collins",
+      "ano": 2008,
+      "genero": "Distopia"
+    },
+    {
+      "id": 20,
+      "titulo": "A Garota no Trem",
+      "autor": "Paula Hawkins",
+      "ano": 2015,
+      "genero": "Suspense"
     }
   ]
 }

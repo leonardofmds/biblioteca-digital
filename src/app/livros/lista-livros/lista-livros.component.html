@@ -1,7 +1,7 @@
 <div class="container">
   <h2>Lista de Livros</h2>
 
-    <div class="mb-3">
+  <div class="mb-3">
     <input type="text" class="form-control" placeholder="Buscar por título..."
            [(ngModel)]="termoBusca" (input)="filtrarLivros()" />
   </div>
@@ -16,18 +16,30 @@
         <th>Ações</th>
       </tr>
     </thead>
-     <tbody>
-      <tr *ngFor="let livro of livrosFiltrados">
+    <tbody>
+      <tr *ngFor="let livro of livrosPaginados">
         <td>{{ livro.titulo }}</td>
         <td>{{ livro.autor }}</td>
         <td>{{ livro.ano }}</td>
         <td>{{ livro.genero }}</td>
         <td>
-          <button class="btn btn-sm btn-primary me-2" (click)="editarLivro(livro.id!)">Editar</button>
-          <button class="btn btn-sm btn-danger me-2" (click)="excluirLivro(livro.id!)">Excluir</button>
           <button class="btn btn-sm btn-info me-2" (click)="verDetalhes(livro.id!)">Detalhes</button>
+          <button class="btn btn-sm btn-primary me-2" (click)="editarLivro(livro.id!)">Editar</button>
+          <button class="btn btn-sm btn-danger" (click)="excluirLivro(livro.id!)">Excluir</button>
         </td>
       </tr>
     </tbody>
   </table>
+
+  <nav *ngIf="livrosFiltrados.length > itensPorPagina">
+    <ul class="pagination justify-content-center">
+      <li
+        class="page-item"
+        *ngFor="let pagina of totalPaginas()"
+        [class.active]="pagina === paginaAtual"
+      >
+        <a class="page-link" (click)="mudarPagina(pagina)">{{ pagina }}</a>
+      </li>
+    </ul>
+  </nav>
 </div>

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
 export interface Livro {
-  id?: string | number;
+  id?: string; 
   titulo: string;
   autor: string;
   ano: number;
@@ -22,7 +22,7 @@ export class LivrosService {
     return this.http.get<Livro[]>(this.API);
   }
 
-  buscarPorId(id: string | number): Observable<Livro> {
+  buscarPorId(id: string): Observable<Livro> {
     return this.http.get<Livro>(`${this.API}/${id}`);
   }
 
@@ -30,11 +30,11 @@ export class LivrosService {
     return this.http.post<Livro>(this.API, livro);
   }
 
-  atualizar(id: string | number, livro: Livro): Observable<Livro> {
+  atualizar(id: string, livro: Livro): Observable<Livro> {
     return this.http.put<Livro>(`${this.API}/${id}`, livro);
   }
 
-  excluir(id: string | number): Observable<void> {
+  excluir(id: string): Observable<void> {
     return this.http.delete<void>(`${this.API}/${id}`);
   }
 }

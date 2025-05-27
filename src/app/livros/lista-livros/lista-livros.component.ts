@@ -64,11 +64,11 @@ export class ListaLivrosComponent implements OnInit {
       .map((_, i) => i + 1);
   }
 
-  editarLivro(id: string | number): void {
+  editarLivro(id: string): void {
     this.router.navigate(['/livros/editar', id]);
   }
 
-  excluirLivro(id: string | number): void {
+  excluirLivro(id: string): void {
     if (confirm('Deseja realmente excluir este livro?')) {
       this.livrosService.excluir(id).subscribe(() => {
         this.carregarLivros();
@@ -76,7 +76,7 @@ export class ListaLivrosComponent implements OnInit {
     }
   }
 
-  verDetalhes(id: string | number): void {
+  verDetalhes(id: string): void {
     this.router.navigate(['/livros/detalhes', id]);
   }
 

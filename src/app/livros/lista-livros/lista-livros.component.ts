@@ -50,4 +50,9 @@ export class ListaLivrosComponent implements OnInit {
       });
     }
   }
+
+  verDetalhes(id: string | number): void {
+  this.router.navigate(['/livros/detalhes', id]);
+}
+
 }

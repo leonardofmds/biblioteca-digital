@@ -24,7 +24,8 @@
         <td>{{ livro.genero }}</td>
         <td>
           <button class="btn btn-sm btn-primary me-2" (click)="editarLivro(livro.id!)">Editar</button>
-          <button class="btn btn-sm btn-danger" (click)="excluirLivro(livro.id!)">Excluir</button>
+          <button class="btn btn-sm btn-danger me-2" (click)="excluirLivro(livro.id!)">Excluir</button>
+          <button class="btn btn-sm btn-info me-2" (click)="verDetalhes(livro.id!)">Detalhes</button>
         </td>
       </tr>
     </tbody>

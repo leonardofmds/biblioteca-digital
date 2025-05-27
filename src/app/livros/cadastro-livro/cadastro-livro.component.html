@@ -1,0 +1,39 @@
+<div class="container">
+  <h2>Cadastro de Livro</h2>
+
+  <form [formGroup]="form" (ngSubmit)="salvar()">
+    <div class="mb-3">
+      <label for="titulo" class="form-label">Título</label>
+      <input id="titulo" class="form-control" formControlName="titulo" />
+      <div class="text-danger" *ngIf="form.get('titulo')?.touched && form.get('titulo')?.invalid">
+        Título é obrigatório.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="autor" class="form-label">Autor</label>
+      <input id="autor" class="form-control" formControlName="autor" />
+      <div class="text-danger" *ngIf="form.get('autor')?.touched && form.get('autor')?.invalid">
+        Autor é obrigatório.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="ano" class="form-label">Ano</label>
+      <input id="ano" type="number" class="form-control" formControlName="ano" />
+      <div class="text-danger" *ngIf="form.get('ano')?.touched && form.get('ano')?.invalid">
+        Ano deve ser maior que 1900.
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="genero" class="form-label">Gênero</label>
+      <input id="genero" class="form-control" formControlName="genero" />
+      <div class="text-danger" *ngIf="form.get('genero')?.touched && form.get('genero')?.invalid">
+        Gênero é obrigatório.
+      </div>
+    </div>
+
+    <button class="btn btn-success" type="submit">Salvar</button>
+  </form>
+</div>

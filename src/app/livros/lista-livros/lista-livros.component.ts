@@ -19,11 +19,12 @@ export class ListaLivrosComponent implements OnInit {
   termoBusca: string = '';
   paginaAtual: number = 1;
   itensPorPagina: number = 5;
+  opcoesPaginacao: number[] = [5, 10, 20, 99999]; // 99999 = todos
 
   constructor(
     private livrosService: LivrosService,
     private router: Router
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.carregarLivros();
@@ -51,6 +52,7 @@ export class ListaLivrosComponent implements OnInit {
     this.livrosPaginados = this.livrosFiltrados.slice(inicio, fim);
   }
 
+
   mudarPagina(pagina: number): void {
     this.paginaAtual = pagina;
     this.atualizarPaginacao();
@@ -77,4 +79,13 @@ export class ListaLivrosComponent implements OnInit {
   verDetalhes(id: string | number): void {
     this.router.navigate(['/livros/detalhes', id]);
   }
+
+  mudarItensPorPagina(event: Event): void {
+    const selectElement = event.target as HTMLSelectElement;
+    this.itensPorPagina = parseInt(selectElement.value, 10);
+    this.paginaAtual = 1;
+    this.atualizarPaginacao();
+  }
+
+
 }
